@@ -183,14 +183,14 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 20px;
-        right: 10px;
+        right: 5px;
     }
 
     .enter-button,
     .contact-button {
       padding: 8px 15px;
       margin: 0 10px;
-      font-size: 16px;
+      font-size: 12px;
       background-color: transparent;
       color: white;
       border: 2px solid white;

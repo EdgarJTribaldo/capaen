@@ -182,7 +182,7 @@
       .wrapper_title h1 {
         padding: 3px;
         color: white;
-        line-height: 0.7rem;
+        line-height: 0.6rem;
         font-size: 1.3rem;
         margin: 0;
         margin-left: -26px;

@@ -172,6 +172,13 @@
 
 
     @media(max-width: 700px){
+      .wrapper_title {
+        position: absolute;
+      width: 100px; /* Adjust the width as needed */
+      gap: 5px;
+      display: flex;
+      align-items: flex-end;
+    }
       .wrapper_title h1 {
         padding: 3px;
         color: white;

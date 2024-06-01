@@ -172,6 +172,17 @@
 
 
     @media(max-width: 700px){
+      .wrapper_title h1 {
+        padding: 3px;
+        color: white;
+        line-height: 0.7rem;
+        font-size: 1.3rem;
+        margin: 0;
+        margin-left: -28px;
+
+        /* background-color: white; */
+    }
+
         .hero-content {
             padding: 20px 10px;
         }

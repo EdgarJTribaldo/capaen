@@ -12,7 +12,7 @@
 
 <!-- Hero.svelte -->
 <div class="hero">
-    <video class="hero-video" autoplay loop muted>
+    <video class="hero-video" autoplay loop muted playsinline>
       <source src="video3.mp4" type="video/mp4">
     </video>
     

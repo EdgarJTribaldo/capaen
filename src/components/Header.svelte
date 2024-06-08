@@ -31,36 +31,39 @@
       height: 100px
     }
   
-    h1 {
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-      margin: 0;
-      font-size: 1.3rem;
-      line-height: 1.3rem;
-      padding-bottom: 18px;
-      opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 1s, transform 1s;
-    }
-
-    h1.animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
   
-    p {
-      margin: 0;
-      font-size: 0.9rem;
-      padding: 0;
-      line-height: 1rem;
+  
+    .wrapper_title {
+        position: absolute;
+        width: 100px;
+        top: 50px;
+        left: 30px;
+      gap: 1px;
+      display: flex;
+      align-items: flex-end;
     }
 
-  .wrapper_title{
+    .wrapper_title p {
+        font-size: 1rem;
+        line-height: 1rem;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
 
-    position: absolute;
-    left: 0px;
-    padding: 50px 30px;
+    .wrapper_title h1 {
+        padding: 3px;
+        color: black;
+        line-height: 0.7rem;
+        font-size: 1.3rem;
+        margin: 0;
+        margin-left: -30px;
+
+        /* background-color: white; */
+    }
+
+  ul li {
+    list-style: none;
   }
   </style>
   
@@ -68,8 +71,8 @@
 
 
     <div class="wrapper_title">
-      <p>{tagline}</p>
-      <h1 class:animate>{title}</h1>
+      <p>{tagline}</p><br>
+      <h1>{title}</h1>
     </div>    
 
     <ul class="menu">

@@ -1,105 +1,86 @@
 <script>
-    import Header from "../../components/Header.svelte";
-    const videos = [
-      {
-        title: 'Video 1',
-        url: 'https://placekitten.com/400x400',
-        thumbnail: 'https://picsum.photos/1200/600'
-      },
-      {
-        title: 'Video 2',
-        url: 'https://example.com/video2.mp4',
-        thumbnail: 'https://picsum.photos/500/400'
-      },
-      {
-        title: 'Video 2',
-        url: 'https://example.com/video2.mp4',
-        thumbnail: 'https://picsum.photos/800/500'
-      },
-      {
-        title: 'Video 2',
-        url: 'https://example.com/video2.mp4',
-        thumbnail: 'https://picsum.photos/800/800'
-      },
-      {
-        title: 'Video 2',
-        url: 'https://example.com/video2.mp4',
-        thumbnail: 'https://picsum.photos/800/600'
-      },
-      {
-        title: 'Video 2',
-        url: 'https://example.com/video2.mp4',
-        thumbnail: 'https://picsum.photos/400/800'
-      },
-      {
-        title: 'Video 2',
-        url: 'https://example.com/video2.mp4',
-        thumbnail: 'https://picsum.photos/800/200'
-      },
-      {
-        title: 'Video 2',
-        url: 'https://example.com/video2.mp4',
-        thumbnail: 'https://picsum.photos/700/200'
-      },
-      {
-        title: 'Video 2',
-        url: 'https://example.com/video2.mp4',
-        thumbnail: 'https://picsum.photos/500/300'
-      },
-      // Agrega más objetos de video según sea necesario
-    ];
-  </script>
+  import Header from "../../components/Header.svelte";
+  const videos = [
+    {
+      title: 'Video 1',
+      url: 'https://example.com/video1.mp4',
+      thumbnail: 'https://picsum.photos/1200/800',
+      rowSpan: 2
+    },
+    {
+      title: 'Video 2',
+      url: 'https://example.com/video2.mp4',
+      thumbnail: 'https://picsum.photos/500/500',
+      rowSpan: 1
+    },
+    {
+      title: 'Video 3',
+      url: 'https://example.com/video3.mp4',
+      thumbnail: 'https://picsum.photos/500/500',
+      rowSpan: 1
+    },
+    {
+      title: 'Video 4',
+      url: 'https://example.com/video4.mp4',
+      thumbnail: 'https://picsum.photos/1200/800',
+      rowSpan: 2
+    },
+    // Agrega más objetos de video según sea necesario
+  ];
+</script>
 
-  <Header/>
-  
-  <main>
-    <div class="video-grid">
-      {#each videos as video}
-        <div class="video-item">
-          <a href={video.url} target="_blank">
+<Header/>
+
+<main>
+  <div class="video-grid">
+    {#each videos as video}
+      <div class="video-item" style="grid-row: span {video.rowSpan};">
+        <a href={video.url} target="_blank">
+          <div class="thumbnail-container">
             <img src={video.thumbnail} alt={video.title} />
-            <!-- <h3>{video.title}</h3> -->
-          </a>
-        </div>
-      {/each}
-    </div>
-  </main>
-  <style>
+          </div>
+        </a>
+      </div>
+    {/each}
+  </div>
+</main>
+
+<style>
+  main {
+    margin-top: 20px;
+    padding: 0px 20px;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px; /* Altura de las filas automáticas */
+    gap: 10px;
+  }
+
+  .video-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .thumbnail-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .thumbnail-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 768px) {
     .video-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 5px;
+      grid-template-columns: 1fr;
     }
-  
-    .video-item {
-      flex: 0 0 calc(33.33% - 20px);
-      max-width: calc(33.33% - 20px);
-      text-align: center;
-    }
-  
-    .video-item img {
-      width: 100%;
-      height: 200px; /* Establece un alto fijo para las imágenes */
-      object-fit: cover;
-      border-radius: 4px;
-    }
-  
-    @media screen and (max-width: 1200px) {
-      .video-item {
-        flex: 0 0 calc(50% - 20px);
-        max-width: calc(50% - 20px);
-      }
-    }
-  
-    @media screen and (max-width: 768px) {
-      .video-item {
-        flex: 0 0 calc(100% - 20px);
-        max-width: calc(100% - 20px);
-      }
-      
-      .video-item img {
-        height: 300px; /* Ajusta el alto de las imágenes en pantallas más pequeñas */
-      }
-    }
-  </style>
+  }
+</style>

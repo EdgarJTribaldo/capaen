@@ -43,9 +43,7 @@
   <div class="video-grid">
     {#each videos as video}
       <div class="thumbnail-container" on:click={() => openModal(video.url)}>
-        <picture>
-        <source srcset={video.thumbnail} type="image/webp">
-        </picture>
+        <img src={video.thumbnail} alt={video.title}>
         <div class="overlay">
           <div class="title">{video.title}</div>
         </div>

@@ -3,21 +3,21 @@
 
   const videos = [
     {
-      title: 'Video 1',
+      title: 'SICKNATION - Trust Your Angels PROMO',
       url: 'https://player.vimeo.com/video/952504857',  // URL embebido del video en Vimeo
-      thumbnail: 'https://picsum.photos/1200/800',
+      thumbnail: './src/img/capaen_sicknation.webp',
       rowSpan: 2
     },
     {
-      title: 'Video 2',
+      title: 'LINA CANTILLO - "Herencias"',
       url: 'https://player.vimeo.com/video/950037482',  // URL embebido del video en Vimeo
-      thumbnail: 'https://picsum.photos/500/500',
+      thumbnail: './src/img/capaen_lina_cantillo.webp',
       rowSpan: 1
     },
     {
-      title: 'Video 3',
+      title: 'SICKNATION - Sickracing',
       url: 'https://player.vimeo.com/video/900903237',  // URL embebido del video en Vimeo
-      thumbnail: 'https://picsum.photos/500/500',
+      thumbnail: './src/img/sick_racing_capaen.webp',
       rowSpan: 1
     },
     
@@ -71,6 +71,7 @@
     justify-content: center;
     align-items: center;
   }
+
 
   .video-grid {
     display: flex;

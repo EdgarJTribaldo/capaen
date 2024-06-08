@@ -156,7 +156,7 @@
     .contact-button {
       padding: 10px 25px;
       margin: 0 10px;
-      font-size: 18px;
+      font-size: 16px;
       background-color: transparent;
       color: white;
       border: 2px solid white;

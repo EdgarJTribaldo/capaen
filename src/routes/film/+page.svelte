@@ -1,32 +1,40 @@
 <script>
   import Header from "../../components/Header.svelte";
+
   const videos = [
     {
       title: 'Video 1',
-      url: 'https://example.com/video1.mp4',
+      url: 'https://player.vimeo.com/video/952504857',  // URL embebido del video en Vimeo
       thumbnail: 'https://picsum.photos/1200/800',
       rowSpan: 2
     },
     {
       title: 'Video 2',
-      url: 'https://example.com/video2.mp4',
+      url: 'https://player.vimeo.com/video/950037482',  // URL embebido del video en Vimeo
       thumbnail: 'https://picsum.photos/500/500',
       rowSpan: 1
     },
     {
       title: 'Video 3',
-      url: 'https://example.com/video3.mp4',
+      url: 'https://player.vimeo.com/video/900903237',  // URL embebido del video en Vimeo
       thumbnail: 'https://picsum.photos/500/500',
       rowSpan: 1
     },
-    {
-      title: 'Video 4',
-      url: 'https://example.com/video4.mp4',
-      thumbnail: 'https://picsum.photos/1200/800',
-      rowSpan: 2
-    },
+    
     // Agrega más objetos de video según sea necesario
   ];
+
+  let selectedVideoUrl = '';
+
+  function openModal(url) {
+    selectedVideoUrl = url;
+    document.getElementById('videoModal').style.display = 'block';
+  }
+
+  function closeModal() {
+    selectedVideoUrl = '';
+    document.getElementById('videoModal').style.display = 'none';
+  }
 </script>
 
 <Header/>
@@ -34,53 +42,138 @@
 <main>
   <div class="video-grid">
     {#each videos as video}
-      <div class="video-item" style="grid-row: span {video.rowSpan};">
-        <a href={video.url} target="_blank">
-          <div class="thumbnail-container">
-            <img src={video.thumbnail} alt={video.title} />
-          </div>
-        </a>
+      <div class="thumbnail-container" on:click={() => openModal(video.url)}>
+        <img src={video.thumbnail} alt={video.title}>
+        <div class="overlay">
+          <div class="title">{video.title}</div>
+        </div>
       </div>
     {/each}
   </div>
 </main>
 
+<!-- Modal -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" on:click={closeModal}>&times;</span>
+    {#if selectedVideoUrl}
+      <iframe src={selectedVideoUrl} width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    {/if}
+  </div>
+</div>
+
 <style>
   main {
     margin-top: 20px;
-    padding: 0px 20px;
-  }
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 250px; /* Altura de las filas automáticas */
-    gap: 10px;
+    height: calc(100vh - 120px);
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .video-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 4px;
+  .video-grid {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 350px;
   }
 
   .thumbnail-container {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   .thumbnail-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .thumbnail-container .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .thumbnail-container .title {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .thumbnail-container:hover img {
+    transform: scale(1.1);
+    filter: blur(5px);
+  }
+
+  .thumbnail-container:hover .overlay {
+    opacity: 1;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    padding: 50px;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+  }
+
+  .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    max-width: 1200px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 768px) {
     .video-grid {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+    }
+
+    .thumbnail-container {
+      margin-bottom: 10px;
     }
   }
 </style>

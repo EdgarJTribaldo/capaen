@@ -29,9 +29,10 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@eslint/eslintrc": "^2.0.0"
+		"@eslint/eslintrc": "^2.0.0",
+		"locomotive-scroll": "^4.1.4"
 	},
 	"engines": {
-	  "node": ">=18.18.0"
-	}  
+		"node": ">=18.18.0"
+	}
 }

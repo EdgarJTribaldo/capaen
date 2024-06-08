@@ -25,10 +25,10 @@
       display: flex;
       flex-direction: row;
       justify-content: right;
-      align-items: center;
+      align-items: flex-start;
       padding: 50px 30px;
       text-align: center;
-      height: 100px
+      height: 100px;
     }
   
   
@@ -57,13 +57,18 @@
         line-height: 0.7rem;
         font-size: 1.3rem;
         margin: 0;
-        margin-left: -30px;
+        margin-left: -20px;
 
         /* background-color: white; */
     }
 
   ul li {
     list-style: none;
+  }
+
+  a{
+    color: black;
+    text-decoration: none;
   }
   </style>
   

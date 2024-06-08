@@ -13,7 +13,7 @@
 <!-- Hero.svelte -->
 <div class="hero">
     <video class="hero-video" autoplay loop muted playsinline>
-      <source src="video3.mp4" type="video/mp4">
+      <source src="kanes_capaen.mp4" type="video/mp4">
     </video>
     
     <div class="hero-content">
@@ -148,8 +148,8 @@
     
     .enter-button:hover,
     .contact-button:hover{
-        background-color: white;
-        color: black;
+        background-color: transparent;
+        color: white;
     }
     
     .enter-button,
@@ -157,8 +157,8 @@
       padding: 10px 25px;
       margin: 0 10px;
       font-size: 16px;
-      background-color: transparent;
-      color: white;
+      background-color: white;
+      color: black;
       border: 2px solid white;
       cursor: pointer;
     }

@@ -2,6 +2,15 @@
 <script>
     import { onMount } from 'svelte';
     import './Fonts.css';
+
+    import { page } from '$app/stores';
+  
+  const menuItems = [
+    { label: 'HOME', url: '/' },
+    { label: 'FILM', url: '/film' },
+    // { label: 'CLIENTS', url: '/services' },
+    { label: 'CONTACT', url: '/contact' }
+  ];
     let animate = false;
   
     onMount(() => {
@@ -18,13 +27,15 @@
 
     .menu {
       display: flex;
+      padding: 14px;
       gap: 18px;
+      margin-left: 150px;
     }
     header {
       color: #000;
       display: flex;
       flex-direction: row;
-      justify-content: right;
+      justify-content: left;
       align-items: flex-start;
       padding: 50px 30px;
       text-align: center;
@@ -62,13 +73,23 @@
         /* background-color: white; */
     }
 
-  ul li {
+    nav ul {
+    display: flex;
     list-style: none;
   }
 
-  a{
-    color: black;
+  nav li {
+    margin-right: 1rem;
+  }
+
+  nav a {
+    color: gray;
     text-decoration: none;
+  }
+
+  nav a.active {
+    color: black;
+    font-weight: bold;
   }
   </style>
   
@@ -80,12 +101,20 @@
       <h1>{title}</h1>
     </div>    
 
-    <ul class="menu">
-      <a href="/"><li>HOME</li></a>
-      <a><li>CLIENTS</li></a>
-      <a><li>SHOP</li></a>
-
-    </ul>
+    <nav>
+      <ul class="menu">
+        {#each menuItems as item}
+          <li>
+            <a 
+              href={item.url} 
+              class:active={$page.url.pathname === item.url}
+            >
+              {item.label}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </nav>
 
   </header>
   

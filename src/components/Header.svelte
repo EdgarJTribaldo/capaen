@@ -92,11 +92,17 @@
 
     .wrapper_title h1 {
       position: absolute;
-      top: 10px;
+      top: 12px;
       left: 20px;
       font-size: 1.3rem;
-    
     }
+
+    
+    nav ul {
+    display: flex;
+    list-style: none;
+    font-size: 0.8;
+  }
 
   }
   </style>

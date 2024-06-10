@@ -24,53 +24,31 @@
   </script>
   
   <style>
-
-    .menu {
-      display: flex;
-      padding: 14px;
-      gap: 18px;
-      margin-left: 150px;
-    }
     header {
-      color: #000;
+      position: relative;
       display: flex;
       flex-direction: row;
-      justify-content: left;
-      align-items: flex-start;
-      padding: 50px 30px;
-      text-align: center;
-      height: 100px;
+      justify-content: flex-start;
+      gap: 80px;
+      padding: 20px;
     }
-  
-  
-  
+
     .wrapper_title {
-        position: absolute;
-        width: 100px;
-        top: 50px;
-        left: 30px;
-      gap: 1px;
-      display: flex;
-      align-items: flex-end;
+      position: relative;
+      width: 40px;
+ 
     }
 
     .wrapper_title p {
-        font-size: 1rem;
-        line-height: 1rem;
-        text-align: left;
-        margin: 0;
-        padding: 0;
+      line-height: 0.9;
+      
     }
 
     .wrapper_title h1 {
-        padding: 3px;
-        color: black;
-        line-height: 0.7rem;
-        font-size: 1.3rem;
-        margin: 0;
-        margin-left: -20px;
-
-        /* background-color: white; */
+      position: absolute;
+      top: 10px;
+      left: 19px;
+    
     }
 
     nav ul {
@@ -91,40 +69,12 @@
     color: black;
     font-weight: bold;
   }
-
   @media screen and (max-width: 768px) {
-    header {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      padding: 0;
-      width: 100%;
-      height: 50px;
+  
+    header{
+      margin-bottom: 40px;
     }
-
-    .wrapper_title {
-      position: relative;
-      top: 1px;
-      right: 0px;
-      display: flex;
-      width: 30%;
-    }
-
-    nav {
-      width: 60%;
-    }
-    nav li {
-    margin-right: 1rem;
-  }
-
-    .menu {
-      display: flex;
-      margin-left: 0px;
-      padding: 0;
-      gap: 0;
-    }
-
-   
+  
   }
   </style>
   

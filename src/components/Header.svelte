@@ -103,7 +103,10 @@
     list-style: none;
     font-size: 0.8;
   }
-
+  nav li {
+    margin-right: 1rem;
+    font-size: 0.8rem;
+  }
   }
   </style>
   

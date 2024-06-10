@@ -171,6 +171,7 @@
   @media screen and (max-width: 768px) {
     .video-grid {
       display: flex;
+      padding: 20px;
     gap: 10px;
     width: 100%;
     height: 700px;

@@ -94,13 +94,37 @@
 
   @media screen and (max-width: 768px) {
     header {
-      height: 20px;
-
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 0;
+      width: 100%;
+      height: 50px;
     }
+
+    .wrapper_title {
+      position: relative;
+      top: 1px;
+      right: 0px;
+      display: flex;
+      width: 30%;
+    }
+
+    nav {
+      width: 60%;
+    }
+    nav li {
+    margin-right: 1rem;
+  }
+
     .menu {
       display: flex;
       margin-left: 0px;
+      padding: 0;
+      gap: 0;
     }
+
+   
   }
   </style>
   

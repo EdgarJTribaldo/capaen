@@ -29,25 +29,32 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    position: relative;
+    z-index: 1;
   }
 
   .wrapper_title {
     display: flex;
     align-items: baseline;
+    flex-shrink: 0;
   }
 
   .wrapper_title p {
     font-size: 1rem;
     margin-right: 0.5rem;
+    white-space: nowrap;
   }
 
   .wrapper_title h1 {
     font-size: 1.5rem;
+    white-space: nowrap;
   }
 
   nav ul {
     display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   nav li {
@@ -57,6 +64,7 @@
   nav a {
     color: gray;
     text-decoration: none;
+    white-space: nowrap;
   }
 
   nav a.active {
@@ -68,6 +76,7 @@
     header {
       flex-direction: column;
       align-items: flex-start;
+      padding: 1rem;
     }
 
     .wrapper_title {
@@ -76,10 +85,11 @@
 
     nav ul {
       flex-direction: column;
+      gap: 0.5rem;
     }
 
     nav li {
-      margin: 0.5rem 0;
+      margin: 0;
     }
   }
 </style>

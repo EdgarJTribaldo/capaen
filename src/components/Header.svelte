@@ -75,7 +75,6 @@
   
     header{
       height: 100px;
-      width: 100%;
       gap: 60px;
     }
     .wrapper_title {
@@ -92,7 +91,7 @@
 
     .wrapper_title h1 {
       position: absolute;
-      top: 12px;
+      top: 13px;
       left: 20px;
       font-size: 1.3rem;
     }

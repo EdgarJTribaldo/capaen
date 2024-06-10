@@ -29,7 +29,7 @@
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      gap: 80px;
+      gap: 100px;
       padding: 20px;
     }
 
@@ -41,13 +41,15 @@
 
     .wrapper_title p {
       line-height: 0.9;
+      font-size: 1rem;
       
     }
 
     .wrapper_title h1 {
       position: absolute;
-      top: 10px;
-      left: 19px;
+      top: 5px;
+      left: 20px;
+      font-size: 1.3rem;
     
     }
 
@@ -72,8 +74,28 @@
   @media screen and (max-width: 768px) {
   
     header{
+      height: 100px;
     }
-  
+    .wrapper_title {
+      position: relative;
+      width: 40px;
+ 
+    }
+
+    .wrapper_title p {
+      line-height: 0.9;
+      font-size: 1rem;
+      
+    }
+
+    .wrapper_title h1 {
+      position: absolute;
+      top: 5px;
+      left: 20px;
+      font-size: 1.3rem;
+    
+    }
+
   }
   </style>
   

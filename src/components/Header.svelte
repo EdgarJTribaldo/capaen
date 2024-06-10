@@ -72,7 +72,6 @@
   @media screen and (max-width: 768px) {
   
     header{
-      margin-bottom: 40px;
     }
   
   }

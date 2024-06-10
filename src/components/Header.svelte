@@ -1,65 +1,57 @@
 <!-- src/lib/components/Header.svelte -->
 <script>
-    import { onMount } from 'svelte';
-    import './Fonts.css';
+  import { onMount } from 'svelte';
+  import './Fonts.css';
+  import { page } from '$app/stores';
 
-    import { page } from '$app/stores';
-  
   const menuItems = [
     { label: 'HOME', url: '/' },
     { label: 'FILM', url: '/film' },
     // { label: 'CLIENTS', url: '/services' },
     { label: 'CONTACT', url: '/contact' }
   ];
-    let animate = false;
-  
-    onMount(() => {
-        animate = true;
-    });
 
-    let title;
-    let tagline;
-    title = "CAPAEN";
-    tagline = "FILM BY"
-  </script>
-  
-  <style>
-    header {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      gap: 100px;
-      padding: 20px;
-    }
+  let animate = false;
 
-    .wrapper_title {
-      position: relative;
-      width: 40px;
- 
-    }
+  onMount(() => {
+    animate = true;
+  });
 
-    .wrapper_title p {
-      line-height: 0.9;
-      font-size: 1rem;
-      
-    }
+  let title;
+  let tagline;
+  title = "CAPAEN";
+  tagline = "FILM BY"
+</script>
 
-    .wrapper_title h1 {
-      position: absolute;
-      top: 5px;
-      left: 20px;
-      font-size: 1.3rem;
-    
-    }
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
 
-    nav ul {
+  .wrapper_title {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .wrapper_title p {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+
+  .wrapper_title h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
     display: flex;
     list-style: none;
   }
 
   nav li {
-    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   nav a {
@@ -71,66 +63,42 @@
     color: black;
     font-weight: bold;
   }
+
   @media screen and (max-width: 768px) {
-  
-    header{
-      height: 100px;
-      gap: 60px;
+    header {
+      flex-direction: column;
+      align-items: flex-start;
     }
+
     .wrapper_title {
-      position: relative;
-      width: 40px;
- 
+      margin-bottom: 1rem;
     }
 
-    .wrapper_title p {
-      line-height: 0.9;
-      font-size: 1rem;
-      
-    }
-
-    .wrapper_title h1 {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      font-size: 1.2rem;
-    }
-
-    
     nav ul {
-    display: flex;
-    list-style: none;
-    font-size: 0.8;
+      flex-direction: column;
+    }
+
+    nav li {
+      margin: 0.5rem 0;
+    }
   }
-  nav li {
-    margin-right: 1rem;
-    font-size: 0.8rem;
-  }
-  }
-  </style>
-  
-  <header>
+</style>
 
+<header>
+  <div class="wrapper_title">
+    <p>{tagline}</p>
+    <h1>{title}</h1>
+  </div>
 
-    <div class="wrapper_title">
-      <p>{tagline}</p><br>
-      <h1>{title}</h1>
-    </div>    
-
-    <nav>
-      <ul class="menu">
-        {#each menuItems as item}
-          <li>
-            <a 
-              href={item.url} 
-              class:active={$page.url.pathname === item.url}
-            >
-              {item.label}
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </nav>
-
-  </header>
-  
+  <nav>
+    <ul class="menu">
+      {#each menuItems as item}
+        <li>
+          <a href={item.url} class:active={$page.url.pathname === item.url}>
+            {item.label}
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </nav>
+</header>

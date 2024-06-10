@@ -75,6 +75,8 @@
   
     header{
       height: 100px;
+      width: 100%;
+      gap: 20px;
     }
     .wrapper_title {
       position: relative;

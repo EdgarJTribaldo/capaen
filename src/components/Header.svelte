@@ -91,7 +91,7 @@
 
     .wrapper_title h1 {
       position: absolute;
-      top: 12px;
+      top: 10px;
       left: 20px;
       font-size: 1.2rem;
     }

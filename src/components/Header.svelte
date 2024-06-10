@@ -91,6 +91,17 @@
     color: black;
     font-weight: bold;
   }
+
+  @media screen and (max-width: 768px) {
+    header {
+      height: 20px;
+
+    }
+    .menu {
+      display: flex;
+      margin-left: 0px;
+    }
+  }
   </style>
   
   <header>

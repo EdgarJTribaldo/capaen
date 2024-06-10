@@ -170,11 +170,20 @@
 
   @media screen and (max-width: 768px) {
     .video-grid {
+      display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 700px;
       flex-direction: column;
     }
 
     .thumbnail-container {
       margin-bottom: 10px;
+    }
+
+    main {
+      margin-top: 0px;
+
     }
   }
 </style>

@@ -103,6 +103,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      
       padding: 50px 30px;
       text-align: center;
       color: #fff;
